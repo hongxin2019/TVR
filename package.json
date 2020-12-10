@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d dist -r git@github.com:hongxin2019/TVR.git"
+    "deploy": "gh-pages -b master -d dist -r git@github.com:hongxin2019/TVR.git",
+    "postdeploy": "git add . --all && git commit -m 'update homepage' && git push origin source"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
