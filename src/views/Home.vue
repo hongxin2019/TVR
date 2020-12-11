@@ -400,6 +400,14 @@
         </div>
       </div>
     </div>
+    <div class="border-b border-gray">
+      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12 text-center">
+        <a href="https://clustrmaps.com/site/1beya" title="Visit tracker"
+          ><img class="rounded mx-auto"
+            src="//www.clustrmaps.com/map_v2.png?d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&cl=ffffff"
+        /></a>
+      </div>
+    </div>
   </div>
 </template>
 
