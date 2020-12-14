@@ -401,11 +401,10 @@
       </div>
     </div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12 text-center">
-        <a href="https://clustrmaps.com/site/1beya" title="Visit tracker"
-          ><img class="rounded mx-auto"
-            src="//www.clustrmaps.com/map_v2.png?d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&cl=ffffff"
-        /></a>
+      <div
+        class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12 flex justify-center"
+      >
+        <div class="w-64" id="counter-wrap"></div>
       </div>
     </div>
   </div>
@@ -441,6 +440,15 @@ export default {
         return '';
       }
     },
+  },
+  mounted() {
+    let counter = document.createElement('script');
+    counter.setAttribute(
+      'src',
+      '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=tt&d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=333'
+    );
+    counter.setAttribute('id', 'clustrmaps');
+    document.getElementById('counter-wrap').appendChild(counter);
   },
 };
 </script>
