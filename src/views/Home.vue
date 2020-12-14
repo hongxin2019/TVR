@@ -445,7 +445,7 @@ export default {
     let counter = document.createElement('script');
     counter.setAttribute(
       'src',
-      '//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=tt&d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=333'
+      '//cdn.clustrmaps.com/map_v2.js?cl=374151&w=a&t=tt&d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=6b7280'
     );
     counter.setAttribute('id', 'clustrmaps');
     document.getElementById('counter-wrap').appendChild(counter);
