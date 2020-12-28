@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Meta from 'vue-meta'
 
 Vue.use(VueRouter)
+Vue.use(Meta)
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('../views/Home.vue')
   },
   {
     path: '/dataset',
@@ -28,6 +29,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: '/TVR/',
   routes
 })
 

@@ -6,9 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "predeploy": "yarn build",
     "deploy": "gh-pages -b master -d dist -r git@github.com:hongxin2019/TVR.git",
-    "postdeploy": "git add . --all && git commit -m 'update homepage' && git push origin source"
+    "postdeploy": "git add . --all && git commit -m 'update homepage' && git push origin source",
+    "predeploy": "yarn build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -21,6 +21,7 @@
     "tailwindcss": "1.9.0",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "gh-pages": "^3.1.0",
+    "vue-cli-plugin-prerender-spa": "~1.1.6",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -81,72 +81,76 @@
             <div class="h-full hidden sm:block sm:ml-10 pt-2 w-full">
               <div class="h-full flex justify-between w-full">
                 <div class="flex space-x-4 h-full">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <div
-                  class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
-                  v-bind:class="{
-                    'border-blue-700': this.$router.currentRoute.path == '/',
-                    'text-blue-700': this.$router.currentRoute.path == '/',
-                  }"
-                >
-                  <router-link
-                    class="hover:text-blue-700 trainsition-all duration-100"
-                    to="/"
-                    >Home</router-link
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
+                    v-bind:class="{
+                      'border-blue-700': this.$router.currentRoute.path == '/',
+                      'text-blue-700': this.$router.currentRoute.path == '/',
+                    }"
                   >
-                </div>
-                <div
-                  class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
-                  v-bind:class="{
-                    'border-blue-700': current_page.includes('dataset'),
-                    'text-blue-700': current_page.includes('dataset'),
-                  }"
-                >
-                  <router-link
-                    class="hover:text-blue-700 trainsition-all duration-100"
-                    to="/dataset"
-                    >Download</router-link
+                    <router-link
+                      class="hover:text-blue-700 trainsition-all duration-100"
+                      to="/"
+                      >Home</router-link
+                    >
+                  </div>
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
+                    v-bind:class="{
+                      'border-blue-700': current_page.includes('dataset'),
+                      'text-blue-700': current_page.includes('dataset'),
+                    }"
                   >
-                </div>
-                <div
-                  class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
-                  v-bind:class="{
-                    'border-blue-700': current_page.includes('leaderboard'),
-                    'text-blue-700': current_page.includes('leaderboard'),
-                  }"
-                >
-                  <router-link
-                    class="hover:text-blue-700 trainsition-all duration-100"
-                    to="/leaderboard"
-                    >Leaderboard</router-link
+                    <router-link
+                      class="hover:text-blue-700 trainsition-all duration-100"
+                      to="/dataset"
+                      >Dataset</router-link
+                    >
+                  </div>
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
+                    v-bind:class="{
+                      'border-blue-700': current_page.includes('leaderboard'),
+                      'text-blue-700': current_page.includes('leaderboard'),
+                    }"
                   >
-                </div>
-                <div
-                  class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
-                  v-bind:class="{
-                    'border-blue-700': current_page.includes('try'),
-                    'text-blue-700': current_page.includes('try'),
-                  }"
-                >
-                  <router-link
-                    class="italic hover:text-blue-700 trainsition-all duration-100"
-                    to="/try"
-                    >Try!</router-link
+                    <router-link
+                      class="hover:text-blue-700 trainsition-all duration-100"
+                      to="/leaderboard"
+                      >Leaderboard</router-link
+                    >
+                  </div>
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
+                    v-bind:class="{
+                      'border-blue-700': current_page.includes('try'),
+                      'text-blue-700': current_page.includes('try'),
+                    }"
                   >
+                    <router-link
+                      class="italic hover:text-blue-700 trainsition-all duration-100"
+                      to="/try"
+                      >Try!</router-link
+                    >
+                  </div>
                 </div>
-              </div>
-              <div class="h-full flex flex-shrink space-x-6">
-                <div
-                  class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
-                >
-                <a href="https://arxiv.org/pdf/2011.13160.pdf"><font-awesome-icon :icon="['fas', 'file-pdf']" /></a>
+                <div class="h-full flex flex-shrink space-x-6">
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
+                  >
+                    <a href="https://arxiv.org/pdf/2011.13160.pdf"
+                      ><font-awesome-icon :icon="['fas', 'file-pdf']"
+                    /></a>
+                  </div>
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
+                  >
+                    <a href="https://github.com/hughplay/TVR"
+                      ><font-awesome-icon :icon="['fab', 'github']"
+                    /></a>
+                  </div>
                 </div>
-                <div
-                  class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
-                >
-                <a href="https://github.com/hughplay/TVR"><font-awesome-icon :icon="['fab', 'github']" /></a>
-                </div>
-              </div>
               </div>
             </div>
           </div>
@@ -184,7 +188,7 @@
               'text-blue-700': this.$router.currentRoute.path == '/dataset',
             }"
             to="/dataset"
-            >Download</router-link
+            >Dataset</router-link
           >
           <router-link
             class="py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
@@ -203,12 +207,16 @@
             >Try!</router-link
           >
           <div class="flex justify-center">
-                <a
-            class="py-2 px-3 mx-2 text-xl"
-                href="https://arxiv.org/pdf/2011.13160.pdf"><font-awesome-icon :icon="['fas', 'file-pdf']" /></a>
-                <a
-            class="py-2 px-3 mx-2 text-xl"
-                href="https://github.com/hughplay/TVR"><font-awesome-icon :icon="['fab', 'github']" /></a>
+            <a
+              class="py-2 px-3 mx-2 text-xl"
+              href="https://arxiv.org/pdf/2011.13160.pdf"
+              ><font-awesome-icon :icon="['fas', 'file-pdf']"
+            /></a>
+            <a
+              class="py-2 px-3 mx-2 text-xl"
+              href="https://github.com/hughplay/TVR"
+              ><font-awesome-icon :icon="['fab', 'github']"
+            /></a>
           </div>
         </div>
       </div>
@@ -220,6 +228,17 @@
 
 <script>
 export default {
+  metaInfo: {
+    title: 'Transformation Driven Visual Reasoning',
+    titleTemplate: '%s | TVR',
+    meta: [
+      {
+        name: 'description',
+        content:
+          "We define a new visual reasoning paradigm by introducing an important factor, i.e., transformation. The motivation comes from the fact that most existing visual reasoning tasks, such as CLEVR in VQA, are solely defined to test how well the machine understands the concepts and relations within static settings, like one image. We argue that this kind of state driven visual reasoning approach has limitations in reflecting whether the machine has the ability to infer the dynamics between different states, which has been shown as important as state-level reasoning for human cognition in Piaget's theory. To tackle this problem, we propose a novel transformation driven visual reasoning task. Given both the initial and final states, the target is to infer the corresponding single-step or multi-step transformation, represented as a triplet (object, attribute, value) or a sequence of triplets, respectively.",
+      },
+    ],
+  },
   data() {
     return {
       menu_visible: false,
