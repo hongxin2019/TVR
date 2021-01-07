@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://hongxin2019.github.io</loc>
+		<loc>https://hongxin2019.github.io/TVR</loc>
 	</url>
 	<url>
-		<loc>https://hongxin2019.github.io/dataset</loc>
+		<loc>https://hongxin2019.github.io/TVR/dataset</loc>
 	</url>
 	<url>
-		<loc>https://hongxin2019.github.io/try</loc>
+		<loc>https://hongxin2019.github.io/TVR/leaderboard</loc>
 	</url>
 	<url>
-		<loc>https://hongxin2019.github.io/leaderboard</loc>
+		<loc>https://hongxin2019.github.io/TVR/try</loc>
 	</url>
 </urlset>
