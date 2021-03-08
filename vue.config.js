@@ -1,5 +1,17 @@
 module.exports = {
   publicPath: '/TVR/',
+  pluginOptions: {
+    sitemap: {
+      outputDir: 'public',
+      pretty: true,
+      urls: [
+        'https://hongxin2019.github.io/TVR/',
+        'https://hongxin2019.github.io/TVR/dataset',
+        'https://hongxin2019.github.io/TVR/leaderboard',
+        'https://hongxin2019.github.io/TVR/try',
+      ],
+    },
+  },
   chainWebpack: config => {
     config.plugin('html').tap(args => {
       args[0].title = 'TVR: Transformation Driven Visual Reasoning';

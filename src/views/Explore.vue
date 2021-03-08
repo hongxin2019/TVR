@@ -11,7 +11,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Try',
+    title: 'Explore',
   },
 }
 </script>

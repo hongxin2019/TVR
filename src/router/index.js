@@ -17,9 +17,9 @@ const routes = [
     component: () => import('../views/Dataset.vue')
   },
   {
-    path: '/try',
-    name: 'Try',
-    component: () => import('../views/Try.vue')
+    path: '/explore',
+    name: 'Explore',
+    component: () => import('../views/Explore.vue')
   },
   {
     path: '/leaderboard',

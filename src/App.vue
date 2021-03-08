@@ -64,18 +64,19 @@
             <div class="flex-shrink-0 flex items-center">
               <div class="block lg:hidden h-10 w-auto">
                 <!-- class="flex flex-col justify-center mr-5 sm:mx-auto"> -->
-                <router-link class="text-3xl text-blue-800 font-bold" to="/"
-                  >TVR</router-link
-                >
+                <router-link class="text-3xl text-blue-800 font-bold" to="/">
+                  <img class="h-full" src="@/assets/images/logo_flat.png" alt="" />
+                </router-link>
               </div>
               <div class="hidden lg:block w-auto h-10">
                 <!-- class="block lg:hidden h-8 w-auto"> -->
                 <!-- class="flex flex-col justify-center mr-5 sm:mx-auto"> -->
                 <router-link
-                  class="text-3xl text-blue-900 font-extrabold"
+                  class="h-full text-3xl text-blue-900 font-extrabold"
                   to="/"
-                  >TVR</router-link
                 >
+                  <img class="h-full" src="@/assets/images/logo_flat.png" alt="" />
+                </router-link>
               </div>
             </div>
             <div class="h-full hidden sm:block sm:ml-10 pt-2 w-full">
@@ -95,6 +96,19 @@
                       >Home</router-link
                     >
                   </div>
+                  <!-- <div
+                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
+                    v-bind:class="{
+                      'border-blue-700': current_page.includes('try'),
+                      'text-blue-700': current_page.includes('try'),
+                    }"
+                  >
+                    <router-link
+                      class="hover:text-blue-700 trainsition-all duration-100"
+                      to="/explore"
+                      >Explore</router-link
+                    >
+                  </div> -->
                   <div
                     class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
                     v-bind:class="{
@@ -108,7 +122,7 @@
                       >Dataset</router-link
                     >
                   </div>
-                  <div
+                  <!-- <div
                     class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
                     v-bind:class="{
                       'border-blue-700': current_page.includes('leaderboard'),
@@ -120,27 +134,14 @@
                       to="/leaderboard"
                       >Leaderboard</router-link
                     >
-                  </div>
-                  <div
-                    class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
-                    v-bind:class="{
-                      'border-blue-700': current_page.includes('try'),
-                      'text-blue-700': current_page.includes('try'),
-                    }"
-                  >
-                    <router-link
-                      class="italic hover:text-blue-700 trainsition-all duration-100"
-                      to="/try"
-                      >Try!</router-link
-                    >
-                  </div>
+                  </div> -->
                 </div>
                 <div class="h-full flex flex-shrink space-x-6">
                   <div
                     class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
                   >
                     <a href="https://arxiv.org/pdf/2011.13160.pdf"
-                      ><font-awesome-icon :icon="['fas', 'file-pdf']"
+                      ><font-awesome-icon :icon="['far', 'file-pdf']"
                     /></a>
                   </div>
                   <div
@@ -148,6 +149,13 @@
                   >
                     <a href="https://github.com/hughplay/TVR"
                       ><font-awesome-icon :icon="['fab', 'github']"
+                    /></a>
+                  </div>
+                  <div
+                    class="border-b-2 border-transparent h-full flex-col flex justify-center text-2xl text-gray-700"
+                  >
+                    <a href="http://hongxin2019.github.io/"
+                      ><font-awesome-icon :icon="['far', 'envelope']"
                     /></a>
                   </div>
                 </div>
@@ -182,40 +190,45 @@
             to="/"
             >Home</router-link
           >
+          <!-- <router-link
+            class="italic py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
+            v-bind:class="{
+              'text-blue-700': this.$router.currentRoute.path == '/explore',
+            }"
+            to="/explore"
+            >Explore</router-link
+          > -->
           <router-link
             class="py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
             v-bind:class="{
               'text-blue-700': this.$router.currentRoute.path == '/dataset',
             }"
             to="/dataset"
-            >Dataset</router-link
+            >Download</router-link
           >
-          <router-link
+          <!-- <router-link
             class="py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
             v-bind:class="{
               'text-blue-700': this.$router.currentRoute.path == '/leaderboard',
             }"
             to="/leaderboard"
             >Leaderboard</router-link
-          >
-          <router-link
-            class="italic py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
-            v-bind:class="{
-              'text-blue-700': this.$router.currentRoute.path == '/try',
-            }"
-            to="/try"
-            >Try!</router-link
-          >
+          > -->
           <div class="flex justify-center">
             <a
               class="py-2 px-3 mx-2 text-xl"
               href="https://arxiv.org/pdf/2011.13160.pdf"
-              ><font-awesome-icon :icon="['fas', 'file-pdf']"
+              ><font-awesome-icon :icon="['far', 'file-pdf']"
             /></a>
             <a
               class="py-2 px-3 mx-2 text-xl"
               href="https://github.com/hughplay/TVR"
               ><font-awesome-icon :icon="['fab', 'github']"
+            /></a>
+            <a
+              class="py-2 px-3 mx-2 text-xl"
+              href="http://hongxin2019.github.io/"
+              ><font-awesome-icon :icon="['far', 'envelope']"
             /></a>
           </div>
         </div>

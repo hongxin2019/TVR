@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
-        <p class="text-4xl text-center font-bold text-blue-900">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <p class="text-3xl sm:text-4xl text-center font-bold text-blue-900">
           <span class="font-extrabold">TVR:</span>
           Transformation Driven Visual Reasoning
         </p>
@@ -24,7 +24,7 @@
           Piaget's theory. To tackle this problem, we propose a novel
           <span class="italic">transformation driven visual reasoning</span>
           task.
-          <span class="text-red-900">
+          <span class="text-yellow-900">
             Given both the initial and final states, the target is to infer the
             corresponding single-step or multi-step transformation, represented
             as a triplet
@@ -35,16 +35,33 @@
       </div>
     </div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <p class="text-blue-900 text-2xl font-bold">News</p>
-        <ul class="list-disc pl-10 mt-2">
+        <ul class="list-disc pl-2 mt-2 list-inside">
+          <li>
+            <span class="font-bold mr-3">2021.03.08</span>
+            <router-link
+              class="font-bold text-blue-700 hover:text-blue-500"
+              to="/dataset"
+              >TRANCE dataset</router-link
+            >
+            <span> is available now. .</span>
+          </li>
+          <li>
+            <span class="font-bold mr-3">2021.03.01</span>
+            <span
+              >Our paper <i>Transformation Driven Visual Reasoning</i> is
+              accepted by
+            </span>
+            <span class="font-bold">CVPR 2021</span>.
+          </li>
           <li>
             <span class="font-bold mr-3">2020.12.09</span>
             <span
               >The code for data generation is ready at
               <a
                 href="https://github.com/hughplay/TVR/tree/master/data/gen_src"
-                class="text-blue-800 hover:text-blue-600"
+                class="font-bold text-blue-700 hover:text-blue-500"
                 >Github</a
               >.</span
             >
@@ -56,7 +73,7 @@
               available at
               <a
                 href="https://arxiv.org/pdf/2011.13160.pdf"
-                class="text-blue-800 hover:text-blue-600"
+                class="font-bold text-blue-700 hover:text-blue-500"
                 >arXiv</a
               >.</span
             >
@@ -65,13 +82,13 @@
       </div>
     </div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <p class="text-blue-900 text-2xl font-bold">TRANCE Dataset</p>
         <p class="mt-2">
           Following the definition of TVR, a new dataset namely TRANCE is
           constructed on the basis of
           <a
-            class="underline text-blue-800 hover:text-blue-600"
+            class="text-blue-700 hover:text-blue-500 font-bold"
             href="https://cs.stanford.edu/people/jcjohns/clevr/"
             >CLEVR</a
           >, including three levels of settings, i.e., Basic, Event, and View.
@@ -84,11 +101,11 @@
           >
             <router-link to="/dataset">Download Dataset</router-link>
           </div>
-          <div
+          <!-- <div
             class="italic bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
           >
             <router-link to="/try">Try it!</router-link>
-          </div>
+          </div> -->
         </div>
         <div class="mt-5 flex flex-wrap justify-between">
           <div>
@@ -128,7 +145,7 @@
               ></Attributes>
             </div>
             <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-red-900 font-bold">
+              <p class="text-sm text-yellow-900 font-bold">
                 Reference Transformations
               </p>
               <img
@@ -178,7 +195,7 @@
               ></Attributes>
             </div>
             <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-red-900 font-bold">
+              <p class="text-sm text-yellow-900 font-bold">
                 Reference Transformations
               </p>
               <img
@@ -257,7 +274,7 @@
               ></Attributes>
             </div>
             <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-red-900 font-bold">
+              <p class="text-sm text-yellow-900 font-bold">
                 Reference Transformations
               </p>
               <img
@@ -271,24 +288,41 @@
       </div>
     </div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
-        <p class="text-blue-900 text-2xl font-bold">
-          Transformation Driven Visual Reasoning
-        </p>
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-end">
+          <p class="text-blue-900 text-2xl font-bold">
+            Transformation Driven Visual Reasoning
+            <a
+              href="https://arxiv.org/pdf/2011.13160.pdf"
+              class="ml-2 text-xl text-blue-800 cursor-pointer transition-all duration-100"
+            >
+              <font-awesome-icon
+                class="text-blue-800"
+                :icon="['far', 'file-pdf']"
+            /></a>
+          </p>
+        </div>
         <div class="mt-2">
           <a href="https://arxiv.org/pdf/2011.13160.pdf">
             <img src="@/assets/images/tvr.png" alt="" />
           </a>
-          <div class="flex">
-            <div
-              class="bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
-            >
-              <a href="https://arxiv.org/pdf/2011.13160.pdf"> Read Paper </a>
-            </div>
-          </div>
         </div>
         <div class="">
-          <p class="mt-6">If the paper inspires you, please cite us:</p>
+          <div class="flex mt-6">
+            <p class="">If our paper inspires you, please cite us.</p>
+            <div class="ml-3 flex">
+              <div
+                class="hover:text-blue-800 rounded cursor-pointer transition-all duration-100"
+                @click="do_copy"
+              >
+                <font-awesome-icon
+                  class="text-blue-800"
+                  :icon="['far', 'copy']"
+                />
+              </div>
+              <p v-if="copied" class="text-sm ml-2 text-gray-600">copied!</p>
+            </div>
+          </div>
           <div class="">
             <pre
               id="bibtex"
@@ -302,23 +336,14 @@
 }</pre
             >
           </div>
-          <div class="flex mt-3 items-center">
-            <div
-              class="bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
-              @click="do_copy"
-            >
-              Copy
-            </div>
-            <p v-if="copied" class="ml-5 text-gray-600">copied!</p>
-          </div>
         </div>
       </div>
     </div>
     <div class="border-b border-gray">
-      <div class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <p class="text-blue-900 text-2xl font-bold">Authors</p>
         <div class="flex flex-col space-y-10 mt-10">
-          <div class="flex flex-wrap space-x-10">
+          <div class="flex flex-wrap space-x-6 sm:space-x-10">
             <a href="https://hongxin2019.github.io/">
               <img
                 class="w-24 h-24 object-cover rounded-full"
@@ -402,7 +427,7 @@
     </div>
     <div class="border-b border-gray">
       <div
-        class="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-12 flex justify-center"
+        class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex justify-center"
       >
         <div class="w-64" id="counter-wrap"></div>
       </div>
@@ -411,12 +436,12 @@
 </template>
 
 <script>
-import Attributes from '../components/Attributes';
+import Attributes from "../components/Attributes";
 
 export default {
-  name: 'Home',
+  name: "Home",
   metaInfo: {
-    title: 'Homepage',
+    title: "Homepage",
   },
   components: {
     Attributes,
@@ -424,34 +449,38 @@ export default {
   data() {
     return {
       copied: false,
-      view: 'right',
+      view: "right",
     };
   },
   methods: {
     do_copy: function () {
-      let self = this;
-      this.$copyText(this.bibtex).then(function () {
-        self.copied = true;
+      this.$copyText(this.bibtex).then(() => {
+        this.copied = true;
+        setTimeout(() => {
+          this.copied = false;
+        }, 3000);
       });
     },
   },
   computed: {
     bibtex: function () {
-      if (document.getElementById('bibtex')) {
-        return document.getElementById('bibtex').innerText;
+      if (document.getElementById("bibtex")) {
+        return document.getElementById("bibtex").innerText;
       } else {
-        return '';
+        return "";
       }
     },
   },
   mounted() {
-    let counter = document.createElement('script');
-    counter.setAttribute(
-      'src',
-      '//cdn.clustrmaps.com/map_v2.js?cl=374151&w=a&t=tt&d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=6b7280'
-    );
-    counter.setAttribute('id', 'clustrmaps');
-    document.getElementById('counter-wrap').appendChild(counter);
+    if (process.env.NODE_ENV != "development") {
+      let counter = document.createElement("script");
+      counter.setAttribute(
+        "src",
+        "//cdn.clustrmaps.com/map_v2.js?cl=374151&w=a&t=tt&d=hwEsCIPToP-j-nRl-4V6BVcOko1v4asL7L2gX5vt1-s&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=6b7280"
+      );
+      counter.setAttribute("id", "clustrmaps");
+      document.getElementById("counter-wrap").appendChild(counter);
+    }
   },
 };
 </script>
