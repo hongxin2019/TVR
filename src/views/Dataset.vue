@@ -282,7 +282,7 @@
         <div>
           <p class="text-blue-900 text-2xl font-bold">Example</p>
           <p class="mt-6">We show a sample below as an example.</p>
-          <pre v-highlightjs
+          <pre
             class="border mt-2 p-5 text-xs overflow-auto rounded"
             style="height: 720px"
           ><code class="json">{

@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import VueHighlightJS from 'vue-highlightjs'
+// import VueHighlightJS from 'vue-highlightjs'
+
+Vue.config.productionTip = false;
 
 import VueClipboard from 'vue-clipboard2';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -10,15 +12,14 @@ import { faCopy, faFilePdf, faEnvelope } from '@fortawesome/free-regular-svg-ico
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import './assets/styles/index.css';
-import 'highlight.js/styles/googlecode.css';
+// import 'highlight.js/styles/googlecode.css';
 
 library.add(faStar, faGithub, faFilePdf, faEnvelope, faCopy, faBookOpen);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-Vue.config.productionTip = false;
 Vue.use(VueClipboard);
-Vue.use(VueHighlightJS)
+// Vue.use(VueHighlightJS)
 
 new Vue({
   router,
