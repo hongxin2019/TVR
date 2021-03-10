@@ -45,7 +45,7 @@
               to="/dataset"
               >TRANCE dataset</router-link
             >
-            <span> is available now. .</span>
+            <span> is available now.</span>
           </li>
           <li>
             <span class="font-bold mr-3">2021.03.01</span>
@@ -53,7 +53,7 @@
               >Our paper <i>Transformation Driven Visual Reasoning</i> is
               accepted by
             </span>
-            <span class="font-bold">CVPR 2021</span>.
+            <span class="font-bold">CVPR 2021</span>. 🎉🎉🎉
           </li>
           <li>
             <span class="font-bold mr-3">2020.12.09</span>

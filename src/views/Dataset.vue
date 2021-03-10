@@ -8,7 +8,7 @@
           <p class="mt-2">
             1. from the link on
             <a
-              class="text-blue-800 hover:text-blue-600 font-bold"
+              class="text-blue-700 hover:text-blue-500 font-bold"
               href="https://www.kaggle.com/silverhugh/trance"
               >kaggle page</a
             >,
@@ -16,7 +16,7 @@
           <p class="mt-2">
             2. or using
             <a
-              class="text-blue-800 hover:text-blue-600 font-bold"
+              class="text-blue-700 hover:text-blue-500 font-bold"
               href="https://github.com/Kaggle/kaggle-api"
               >kaggle-api</a
             >.
@@ -50,7 +50,7 @@
             The image folder contains all images with the resolution of 160 ×
             120. Higher resolution images can be rendered by using our
             <a
-              class="text-blue-800 hover:text-blue-600 font-bold"
+              class="text-blue-700 hover:text-blue-500 font-bold"
               href="https://github.com/hughplay/TVR"
               >code</a
             >

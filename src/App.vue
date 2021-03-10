@@ -96,11 +96,11 @@
                       >Home</router-link
                     >
                   </div>
-                  <!-- <div
+                  <div
                     class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
                     v-bind:class="{
-                      'border-blue-700': current_page.includes('try'),
-                      'text-blue-700': current_page.includes('try'),
+                      'border-blue-700': current_page.includes('explore'),
+                      'text-blue-700': current_page.includes('explore'),
                     }"
                   >
                     <router-link
@@ -108,7 +108,7 @@
                       to="/explore"
                       >Explore</router-link
                     >
-                  </div> -->
+                  </div>
                   <div
                     class="border-b-2 border-transparent h-full flex-col px-4 flex justify-center"
                     v-bind:class="{
@@ -190,14 +190,14 @@
             to="/"
             >Home</router-link
           >
-          <!-- <router-link
-            class="italic py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
+          <router-link
+            class="py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
             v-bind:class="{
               'text-blue-700': this.$router.currentRoute.path == '/explore',
             }"
             to="/explore"
             >Explore</router-link
-          > -->
+          >
           <router-link
             class="py-2 hover:bg-gray-200 rounded block hover:text-blue-700 trainsition-all duration-100 w-full"
             v-bind:class="{
