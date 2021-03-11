@@ -124,7 +124,7 @@
                     />
                   </div>
                 </div>
-                <p class="text-xs text-gray-600 pt-2">
+                <p class="text-xs text-gray-600 pt-2 italic">
                   *Click the image to change the diagram below.
                 </p>
               </div>
@@ -381,7 +381,7 @@ export default {
       if (name == "1" || name == "2") {
         name = name + " step";
       }
-      return require("../assets/images/icons/" + name + ".jpg");
+      return require("../assets/images/icons/" + name + ".svg");
     },
   },
   computed: {

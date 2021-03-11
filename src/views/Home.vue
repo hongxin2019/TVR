@@ -7,7 +7,7 @@
           Transformation Driven Visual Reasoning
         </p>
         <div class="flex justify-center mt-10">
-          <img width="600" src="@/assets/images/tvr_web.svg" alt="" />
+          <img width="600" src="@/assets/images/web.svg" alt="" />
         </div>
         <p class="text-blue-900 text-2xl font-bold mt-10">Abstract</p>
         <p class="mt-2">
@@ -91,7 +91,7 @@
             class="text-blue-700 hover:text-blue-500 font-bold"
             href="https://cs.stanford.edu/people/jcjohns/clevr/"
             >CLEVR</a
-          >, including three levels of settings, i.e., Basic, Event, and View.
+          >, including <b>three levels of settings, i.e., Basic, Event, and View</b>.
           The additional attributes of initial objects are provided so that the
           objects can be referred with numbers.
         </p>
@@ -99,7 +99,12 @@
           <div
             class="bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
           >
-            <router-link to="/dataset">Download Dataset</router-link>
+            <router-link to="/dataset">Explore TRANCE</router-link>
+          </div>
+          <div
+            class="bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
+          >
+            <router-link to="/dataset">Download TRANCE</router-link>
           </div>
           <!-- <div
             class="italic bg-white hover:bg-blue-700 border-blue-700 text-blue-800 hover:text-white text-sm border-2 py-1 px-3 rounded shadow cursor-pointer transition-all duration-100"
@@ -144,15 +149,63 @@
                 :show="true"
               ></Attributes>
             </div>
-            <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-yellow-900 font-bold">
-                Reference Transformations
-              </p>
-              <img
-                class="w-48"
-                src="@/assets/images/examples/basic_res.svg"
-                alt=""
-              />
+            <div class="mt-5 border-t border-gray-300 pt-3 pl-2">
+              <div class="">
+                <p class="font-bold text-sm text-yellow-900">
+                  Reference Transformation
+                </p>
+                <table class="table-auto mt-2 font-serif font-bold">
+                  <tr class="text-xs border-b-2 border-gray-700">
+                    <th class="px-2">Step</th>
+                    <th class="px-2">Obj.</th>
+                    <th class="px-2">Attr.</th>
+                    <th class="px-2">Val.</th>
+                  </tr>
+                  <tr
+                    v-for="(t, i) in transformations.basic"
+                    :key="'t_view_' + i"
+                    class=""
+                  >
+                    <td class="italic text-center align-middle">
+                      {{ i + 1 }}.
+                    </td>
+                    <td>
+                      <div class="flex justify-center text-xs">
+                        <p
+                          class="border rounded-full border-black w-5 h-5 text-center"
+                        >
+                          {{ t.obj_idx }}
+                        </p>
+                      </div>
+                    </td>
+                    <td class="text-center text-sm">{{ t.attr }}</td>
+                    <td class="pt-1">
+                      <div v-if="lodash.isArray(t.val)" class="flex space-x-2">
+                        <img
+                          v-for="val in t.val"
+                          :key="'t_val_' + val"
+                          :src="get_icon_url(val)"
+                          alt=""
+                          class="object-contain h-6"
+                          v-bind:class="{
+                            'w-6': lodash.split(val, '-').length == 1,
+                            'w-4': lodash.split(val, '-').length == 2,
+                            'mx-1': lodash.split(val, '-').length == 2,
+                            'w-12': val == '2',
+                          }"
+                        />
+                      </div>
+                      <div v-else class="flex justify-center">
+                        <img
+                          :src="get_icon_url(t.val)"
+                          alt=""
+                          class="w-6 object-contain h-6"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
           <div>
@@ -194,15 +247,63 @@
                 :show="true"
               ></Attributes>
             </div>
-            <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-yellow-900 font-bold">
-                Reference Transformations
-              </p>
-              <img
-                class="w-48"
-                src="@/assets/images/examples/event_res.svg"
-                alt=""
-              />
+            <div class="mt-5 border-t border-gray-300 pt-3 pl-2">
+              <div class="">
+                <p class="font-bold text-sm text-yellow-900">
+                  Reference Transformation
+                </p>
+                <table class="table-auto mt-2 font-serif font-bold">
+                  <tr class="text-xs border-b-2 border-gray-700">
+                    <th class="px-2">Step</th>
+                    <th class="px-2">Obj.</th>
+                    <th class="px-2">Attr.</th>
+                    <th class="px-2">Val.</th>
+                  </tr>
+                  <tr
+                    v-for="(t, i) in transformations.event"
+                    :key="'t_view_' + i"
+                    class=""
+                  >
+                    <td class="italic text-center align-middle">
+                      {{ i + 1 }}.
+                    </td>
+                    <td>
+                      <div class="flex justify-center text-xs">
+                        <p
+                          class="border rounded-full border-black w-5 h-5 text-center"
+                        >
+                          {{ t.obj_idx }}
+                        </p>
+                      </div>
+                    </td>
+                    <td class="text-center text-sm">{{ t.attr }}</td>
+                    <td class="pt-1">
+                      <div v-if="lodash.isArray(t.val)" class="flex space-x-2">
+                        <img
+                          v-for="val in t.val"
+                          :key="'t_val_' + val"
+                          :src="get_icon_url(val)"
+                          alt=""
+                          class="object-contain h-6"
+                          v-bind:class="{
+                            'w-6': lodash.split(val, '-').length == 1,
+                            'w-4': lodash.split(val, '-').length == 2,
+                            'mx-1': lodash.split(val, '-').length == 2,
+                            'w-12': val == '2',
+                          }"
+                        />
+                      </div>
+                      <div v-else class="flex justify-center">
+                        <img
+                          :src="get_icon_url(t.val)"
+                          alt=""
+                          class="w-6 object-contain h-6"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
           <div>
@@ -273,15 +374,63 @@
                 :show="true"
               ></Attributes>
             </div>
-            <div class="mt-5 border-t border-gray-300 pt-3">
-              <p class="text-sm text-yellow-900 font-bold">
-                Reference Transformations
-              </p>
-              <img
-                class="h-32"
-                src="@/assets/images/examples/view_res.svg"
-                alt=""
-              />
+            <div class="mt-5 border-t border-gray-300 pt-3 pl-2">
+              <div class="">
+                <p class="font-bold text-sm text-yellow-900">
+                  Reference Transformation
+                </p>
+                <table class="table-auto mt-2 font-serif font-bold">
+                  <tr class="text-xs border-b-2 border-gray-700">
+                    <th class="px-2">Step</th>
+                    <th class="px-2">Obj.</th>
+                    <th class="px-2">Attr.</th>
+                    <th class="px-2">Val.</th>
+                  </tr>
+                  <tr
+                    v-for="(t, i) in transformations.view"
+                    :key="'t_view_' + i"
+                    class=""
+                  >
+                    <td class="italic text-center align-middle">
+                      {{ i + 1 }}.
+                    </td>
+                    <td>
+                      <div class="flex justify-center text-xs">
+                        <p
+                          class="border rounded-full border-black w-5 h-5 text-center"
+                        >
+                          {{ t.obj_idx }}
+                        </p>
+                      </div>
+                    </td>
+                    <td class="text-center text-sm">{{ t.attr }}</td>
+                    <td class="pt-1">
+                      <div v-if="lodash.isArray(t.val)" class="flex space-x-2">
+                        <img
+                          v-for="val in t.val"
+                          :key="'t_val_' + val"
+                          :src="get_icon_url(val)"
+                          alt=""
+                          class="object-contain h-6"
+                          v-bind:class="{
+                            'w-6': lodash.split(val, '-').length == 1,
+                            'w-4': lodash.split(val, '-').length == 2,
+                            'mx-1': lodash.split(val, '-').length == 2,
+                            'w-12': val == '2',
+                          }"
+                        />
+                      </div>
+                      <div v-else class="flex justify-center">
+                        <img
+                          :src="get_icon_url(t.val)"
+                          alt=""
+                          class="w-6 object-contain h-6"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -328,11 +477,11 @@
               id="bibtex"
               class="overflow-auto mt-2 bg-gray-100 py-3 px-4 rounded border border-gray-400 text-xs"
             >
-@article{hong2020tvr,
-    title={Transformation Driven Visual Reasoning},
+@inproceedings{hong2021tvr,
     author={Xin Hong, Yanyan Lan, Liang Pang, Jiafeng Guo and Xueqi Cheng},
-    year = {2020},
-    journal={arXiv}
+    title={Transformation Driven Visual Reasoning},
+    booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year = {2021}
 }</pre
             >
           </div>
@@ -437,6 +586,7 @@
 
 <script>
 import Attributes from "../components/Attributes";
+import _ from "lodash";
 
 export default {
   name: "Home",
@@ -450,6 +600,60 @@ export default {
     return {
       copied: false,
       view: "right",
+      lodash: _,
+      transformations: {
+        basic: [
+          {
+            obj_idx: 2,
+            attr: "color",
+            val: "purple",
+          },
+        ],
+        event: [
+          {
+            obj_idx: 3,
+            attr: "position",
+            val: ["front", 2],
+          },
+          {
+            obj_idx: 0,
+            attr: "position",
+            val: ["right", 1],
+          },
+          {
+            obj_idx: 0,
+            attr: "position",
+            val: ["front-left", 2],
+          },
+          {
+            obj_idx: 2,
+            attr: "shape",
+            val: "sphere",
+          },
+        ],
+        view: [
+          {
+            obj_idx: 4,
+            attr: "position",
+            val: ["behind", 1],
+          },
+          {
+            obj_idx: 5,
+            attr: "size",
+            val: "medium",
+          },
+          {
+            obj_idx: 7,
+            attr: "shape",
+            val: "cube",
+          },
+          {
+            obj_idx: 7,
+            attr: "material",
+            val: "glass",
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -460,6 +664,13 @@ export default {
           this.copied = false;
         }, 3000);
       });
+    },
+    get_icon_url: function (name) {
+      name = _.replace(name, "*", "");
+      if (name == "1" || name == "2") {
+        name = name + " step";
+      }
+      return require("../assets/images/icons/" + name + ".svg");
     },
   },
   computed: {
