@@ -69,13 +69,13 @@
             <div
               class="font-bold bg-white text-sm border-2 py-1 px-3 rounded cursor-default shadow transition-all duration-100"
               v-bind:class="{
-                'border-blue-700': current_idx < samples.length,
-                'hover:bg-blue-700': current_idx < samples.length,
-                'hover:text-white': current_idx < samples.length,
-                'text-blue-800': current_idx < samples.length,
-                'cursor-pointer': current_idx < samples.length,
-                'border-gray-500': current_idx >= samples.length,
-                'text-gray-700': current_idx >= samples.length,
+                'border-blue-700': current_idx + 1 < current_samples.length,
+                'hover:bg-blue-700': current_idx + 1 < current_samples.length,
+                'hover:text-white': current_idx + 1 < current_samples.length,
+                'text-blue-800': current_idx + 1 < current_samples.length,
+                'cursor-pointer': current_idx + 1 < current_samples.length,
+                'border-gray-500': current_idx + 1 >= current_samples.length,
+                'text-gray-700': current_idx + 1 >= current_samples.length,
               }"
               @click="next_sample"
             >
@@ -318,6 +318,7 @@ export default {
       lodash: _,
       setting: "basic",
       samples: samples,
+      current_samples: [],
       current_idx: 0,
       views: ["Camera_Center", "Camera_Left", "Camera_Right"],
       default_view: "Camera_Center",
@@ -359,7 +360,13 @@ export default {
   },
   methods: {
     reset: function () {
-      this.samples = _.shuffle(this.samples);
+      var samples = []
+      if (this.setting == 'basic') {
+        samples = _.filter(this.samples, (s) => {return s['transformations'].length == 1;})
+      } else {
+        samples = this.samples;
+      }
+      this.current_samples = _.shuffle(samples);
       this.current_idx = 0;
       this.current_diagram = "init";
     },
@@ -369,7 +376,7 @@ export default {
       }
     },
     next_sample: function () {
-      if (this.current_idx < this.samples.length) {
+      if (this.current_idx + 1 < this.current_samples.length) {
         this.current_idx += 1;
       }
     },
@@ -386,8 +393,8 @@ export default {
   },
   computed: {
     current_sample: function () {
-      if (this.current_idx >= 0 && this.samples.length > this.current_idx) {
-        return this.samples[this.current_idx];
+      if (this.current_idx >= 0 && this.current_samples.length > this.current_idx) {
+        return this.current_samples[this.current_idx];
       } else {
         return {};
       }
@@ -413,14 +420,14 @@ export default {
       }
     },
     current_init_objs: function () {
-      if (!_.isUndefined(this.current_sample)) {
+      if (!_.isUndefined(this.current_sample.states)) {
         return this.current_sample.states[0].objects;
       } else {
         return [];
       }
     },
     current_fin_objs: function () {
-      if (!_.isUndefined(this.current_sample)) {
+      if (!_.isUndefined(this.current_sample.states)) {
         return _.last(this.current_sample.states).objects;
       } else {
         return [];
@@ -443,7 +450,9 @@ export default {
       }
     },
     current_objs: function () {
-      Diagram.update_diagram("diagram", this.current_objs, this.diagram_scale);
+      if (this.current_objs.length > 0) {
+        Diagram.update_diagram("diagram", this.current_objs, this.diagram_scale);
+      }
     },
     setting: function () {
       this.reset();
