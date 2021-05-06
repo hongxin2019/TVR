@@ -39,6 +39,16 @@
         <p class="text-blue-900 text-2xl font-bold">News</p>
         <ul class="list-disc pl-2 mt-2 list-inside">
           <li>
+            <span class="font-bold mr-3">2021.05.06</span>
+            <span>Code for training and testing has been released to our
+              <a
+                href="https://github.com/hughplay/TVR/"
+                class="font-bold text-blue-700 hover:text-blue-500"
+                >Github repo</a
+              >.
+            </span>
+          </li>
+          <li>
             <span class="font-bold mr-3">2021.03.08</span>
             <router-link
               class="font-bold text-blue-700 hover:text-blue-500"
@@ -91,8 +101,9 @@
             class="text-blue-700 hover:text-blue-500 font-bold"
             href="https://cs.stanford.edu/people/jcjohns/clevr/"
             >CLEVR</a
-          >, including <b>three levels of settings, i.e., Basic, Event, and View</b>.
-          The additional attributes of initial objects are provided so that the
+          >, including
+          <b>three levels of settings, i.e., Basic, Event, and View</b>. The
+          additional attributes of initial objects are provided so that the
           objects can be referred with numbers.
         </p>
         <div class="flex mt-2 space-x-2">
